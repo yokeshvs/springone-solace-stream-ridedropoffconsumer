@@ -1,0 +1,27 @@
+spring:
+  cloud:
+    stream:
+      function:
+        definition: taxiNycV1StatsDropoffAvgConsumer
+      bindings:
+        taxiNycV1StatsDropoffAvgConsumer-in-0:
+          destination: test/taxi/yo/nyc/v1/stats/dropoff/avg
+solace:
+  java:
+    host: 'tcps://test.messaging.solace.cloud:55443'
+    msgVpn: yokesh-springone-service
+    clientUsername: solace-cloud-client
+    clientPassword: test
+logging:
+  level:
+    root: info
+    org:
+      springframework: info
+server:
+  port: 8081
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
